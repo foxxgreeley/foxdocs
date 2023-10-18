@@ -17,8 +17,9 @@ export default defineConfig({
 		'./src/tailwind.css',
 	],
 	components: {
-        // Override the default `Header` component.
-        Header: './src/components/Header.astro',
+    // Override the default `Header` component.
+    Header: './src/components/Header.astro',
+    Hero: './src/components/Hero.astro',
 		SocialIcons: './src/components/SocialIcons.astro',
 		Pagination: './src/components/Pagination.astro',
 	},
