@@ -16,6 +16,10 @@ export default defineConfig({
 		// Path to your Tailwind base styles:
 		'./src/tailwind.css',
 	],
+	components: {
+        // Override the default `Header` component.
+        SocialIcons: './src/components/Header.astro',
+	},
     social: {
       github: 'https://github.com/foxxgreeley'
     },
