@@ -5,11 +5,12 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
-    title: 'Foxdocs',
+    title: 'FoxDocs',
 	logo: {
 		replacesTitle: true,
 		light: './src/assets/light-logo.webp',
 		dark: './src/assets/dark-logo.webp',
+		width: 50,
 	},
 	customCss: [
 		// Path to your Tailwind base styles:

@@ -1,5 +1,5 @@
 ---
-title: Astro Starlight Basics
+title: FoxDocs
 description: A example guide of my new Starlight docs site.
 ---
 
