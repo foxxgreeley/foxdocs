@@ -28,24 +28,14 @@ export default defineConfig({
     },
     sidebar: [{
       label: 'Guides',
-      items: [
-      // Each item here is one entry in the navigation menu.
-	  {
-        label: 'Getting Started',
-        link: '/guides/getting-started/'
-      },  
-	  {
-        label: 'Example Guide',
-        link: '/guides/example/'
-      }, 
-	  {
-        label: 'Test Document',
-        link: '/guides/test/'
-      }]
-    }, {
-      label: 'Reference',
       autogenerate: {
-        directory: 'reference'
+        directory: 'guides'
+      }
+    }, {
+      label: 'Tools',
+      collapsed: true,
+      autogenerate: {
+        directory: 'tools'
       }
     }]
   }), tailwind(
