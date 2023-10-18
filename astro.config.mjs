@@ -6,6 +6,10 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [starlight({
     title: 'Foxdocs',
+	logo: {
+		light: './src/assets/light-logo.webp',
+		dark: './src/assets/dark-logo.webp',
+	},
 	customCss: [
 		// Path to your Tailwind base styles:
 		'./src/tailwind.css',
