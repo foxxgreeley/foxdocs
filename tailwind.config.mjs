@@ -1,24 +1,15 @@
 const starlightPlugin = require('@astrojs/starlight-tailwind');
 
+// Generated color palettes 
+const accent = { 200: '#acc9ff', 600: '#0453ff', 900: '#082a75', 950: '#0b204f' };
+const gray = { 100: '#f6f6f6', 200: '#eeeeee', 300: '#c2c2c2', 400: '#8b8b8b', 500: '#585858', 700: '#383838', 800: '#272727', 900: '#181818' };
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			colors: {
-				accent: '#ff0080',
-				gray: {
-					'100': '#f7fafc',
-					'200': '#edf2f7',
-					'300': '#e2e8f0',
-					'400': '#cbd5e0',
-					'500': '#a0aec0',
-					'600': '#718096',
-					'700': '#4a5568',
-					'800': '#2d3748',
-					'900': '#1a202c',
-				},
-			},
+			colors: { accent, gray },
 			fontFamily: {
 				sans: [
 					'Inter',
