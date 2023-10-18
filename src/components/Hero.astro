@@ -7,15 +7,18 @@ const { data } = Astro.props.entry;
 const { title = data.title, tagline, image, actions = [] } = data.hero || {};
 ---
 
-<div class="flex flex-row-reverse flex-wrap p-12">
-  <iframe
-    class="min-h-[600px] w-1/2"
-    src="https://my.spline.design/draganddropfloatingemojiscopy-60c81b77007f8ccab0ec5345fca7aaf6/"
-    frameborder="0"
-  >
-  </iframe>
+<div class="flex flex-row-reverse flex-wrap py-20">
+  <div class="min-h-[600px] w-full md:w-1/2 mx-auto mb-6">
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://my.spline.design/draganddropfloatingemojiscopy-60c81b77007f8ccab0ec5345fca7aaf6/"
+      frameborder="0"
+    >
+    </iframe>
+  </div>
 
-  <div class="flex flex-col gap-10 w-1/2">
+  <div class="flex flex-col gap-10 w-full lg:w-1/2">
     <div class="flex flex-col gap-5">
       <h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
       {tagline && <div class="tagline" set:html={tagline} />}
