@@ -18,7 +18,7 @@ export default defineConfig({
 	],
 	components: {
         // Override the default `Header` component.
-        SocialIcons: './src/components/Header.astro',
+        Header: './src/components/Header.astro',
 	},
     social: {
       github: 'https://github.com/foxxgreeley'
