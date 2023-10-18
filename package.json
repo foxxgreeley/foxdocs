@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": "civil-comet",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -8,9 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "3.8.2",
-    "astro": "^2.10.14",
-    "react": "18.2.0",
-    "web-vitals": "^3.3.1"
+    "@astrojs/starlight": "^0.11.1",
+    "astro": "^3.2.3",
+    "sharp": "^0.32.5"
   }
 }

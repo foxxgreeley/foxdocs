@@ -1,17 +1,27 @@
 import { defineConfig } from 'astro/config';
-// Use Vercel Edge Functions (Recommended)
-import vercel from '@astrojs/vercel/edge';
-// Can also use Serverless Functions
-// import vercel from '@astrojs/vercel/serverless';
-// Or a completely static build
-// import vercel from '@astrojs/vercel/static';
+import starlight from '@astrojs/starlight';
 
+// https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  experimental: {
-    assets: true
-   },
-  adapter: vercel({
-    imageService: true,
-  }),
+	integrations: [
+		starlight({
+			title: 'My Docs',
+			social: {
+				github: 'https://github.com/withastro/starlight',
+			},
+			sidebar: [
+				{
+					label: 'Guides',
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Example Guide', link: '/guides/example/' },
+					],
+				},
+				{
+					label: 'Reference',
+					autogenerate: { directory: 'reference' },
+				},
+			],
+		}),
+	],
 });
