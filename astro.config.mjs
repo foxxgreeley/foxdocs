@@ -15,6 +15,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Example Guide', link: '/guides/example/' },
+						{ label: 'Test Document', link: '/guides/test/' },
 					],
 				},
 				{
