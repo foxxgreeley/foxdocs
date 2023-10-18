@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [starlight({
     title: 'Foxdocs',
 	logo: {
+		replacesTitle: true,
 		light: './src/assets/light-logo.webp',
 		dark: './src/assets/dark-logo.webp',
 	},
