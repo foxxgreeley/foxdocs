@@ -8,8 +8,8 @@ export default defineConfig({
     title: 'FoxDocs',
 	logo: {
 		replacesTitle: true,
-		light: './src/assets/light-logo.webp',
-		dark: './src/assets/dark-logo.webp',
+		light: './src/assets/light-logo.png',
+		dark: './src/assets/dark-logo.png',
 		width: 50,
 	},
 	customCss: [
