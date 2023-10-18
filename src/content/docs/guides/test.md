@@ -1,5 +1,5 @@
 ---
-title: FoxDocs
+title: Test Doc
 description: A example guide of my new Starlight docs site.
 ---
 

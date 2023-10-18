@@ -7,13 +7,12 @@ import {
   SiteTitle,
   SocialIcons,
   ThemeSelect,
-} from '@astrojs/starlight/components';
+} from 'virtual:starlight/components';
 ---
 
 <div class="header sl-flex">
-  <div class="sl-flex">
+  <div class="sl-flex w-[1.5rem]">
     <SiteTitle {...Astro.props} />
-    <p>Test</p>
   </div>
   <div class="sl-flex">
     <Search {...Astro.props} />

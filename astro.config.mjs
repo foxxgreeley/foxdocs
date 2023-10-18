@@ -19,6 +19,8 @@ export default defineConfig({
 	components: {
         // Override the default `Header` component.
         Header: './src/components/Header.astro',
+		SocialIcons: './src/components/SocialIcons.astro',
+		Pagination: './src/components/Pagination.astro',
 	},
     social: {
       github: 'https://github.com/foxxgreeley'
@@ -27,10 +29,15 @@ export default defineConfig({
       label: 'Guides',
       items: [
       // Each item here is one entry in the navigation menu.
-      {
+	  {
+        label: 'Getting Started',
+        link: '/guides/getting-started/'
+      },  
+	  {
         label: 'Example Guide',
         link: '/guides/example/'
-      }, {
+      }, 
+	  {
         label: 'Test Document',
         link: '/guides/test/'
       }]

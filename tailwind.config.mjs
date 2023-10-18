@@ -38,5 +38,7 @@ export default {
 			},
 		},
 	},
+	// darkmode html data-theme="dark"
+	darkMode: ['class', '[data-theme="dark"]'],
 	plugins: [starlightPlugin()],
 }
