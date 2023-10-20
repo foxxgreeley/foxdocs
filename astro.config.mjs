@@ -37,12 +37,6 @@ export default defineConfig({
   },
   integrations: [starlight({
     title: 'FoxDocs',
-    logo: {
-      replacesTitle: false,
-      light: './src/assets/light-logo.png',
-      dark: './src/assets/dark-logo.png',
-      width: 50
-    },
     customCss: [
     // Path to your Tailwind base styles:
     './src/tailwind.css'],

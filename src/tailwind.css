@@ -14,6 +14,9 @@ html {
 
 /* Dark mode colors. */
 :root {
+
+	--sl-sidebar-width: 16.75rem;
+
 	--sl-text-sm: 0.875rem !important;
 	--sl-text-base: 15px;
     --sl-text-h1: 32px;
@@ -146,4 +149,12 @@ li details ul ul details summary span{
 	background-color: var(--sl-code-bg) !important;
 	border-radius: 10px;
 	font-size: 14px !important;
+}
+
+starlight-toc span{
+	font-size: 0.875rem !important;
+}
+
+a[aria-current="page"] .sl-badge {
+	outline: none;
 }
