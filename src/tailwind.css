@@ -57,19 +57,20 @@ html {
 }
 /* Light mode colors. */
 :root[data-theme='light'] {
+	--sl-color-bg-nav: rgb(255, 255, 255); /* Nav BG */
 	--sl-color-accent-low: rgb(255, 255, 255);
 	--sl-color-accent: rgb(20, 33, 47);
 	--sl-color-accent-high: #ffffff !important;
 
 	--sl-color-bg: rgb(255, 255, 255); /* Background | Markdown & ToC */
-	--sl-color-gray-6: rgb(20, 33, 47); /* Sidebar BG */
+	--sl-color-gray-6: rgb(169, 184, 200); /* Sidebar BG */
 
-	--sl-color-gray-5: rgb(20, 33, 47); /* Borders */
+	--sl-color-gray-5: rgb(221, 231, 241); /* Borders */
 	--sl-color-black: var(--sl-color-gray-5); /* Sidebar Borders */
 	--sl-color-hairline:  var(--sl-color-gray-5); /* Markdown Inline Borders */
 
-	--text-base-color: #000000;
-	--sl-color-white: rgb(0, 0, 0); /* Headings */
+	--text-base-color: rgb(15 23 42);
+	--sl-color-white: rgb(15 23 42); /* Headings */
 	--sl-color-text-invert: rgb(255, 255, 255) !important; /* Body Text */
 
 	--sl-color-text: var(--text-base-color) !important; /* Body Text */
@@ -78,7 +79,7 @@ html {
 	--sl-color-gray-1: var(--sl-color-white) !important;
 	--sl-color-gray-4: #545861;
 
-	--sl-code-bg: var(--sl-color-black); /* Code Blocks */
+	--sl-code-bg: #17202e; /* Code Blocks */
 
 	/* Code Blocks */
 	--astro-code-color-text: var(--sl-color-white);
@@ -92,6 +93,10 @@ html {
     --astro-code-token-string-expression: rgb(125 211 252) !important;
     --astro-code-token-punctuation: var(--sl-color-gray-2);
     --astro-code-token-link: var(--sl-color-blue-high);
+}
+
+.right-sidebar{
+	border-left: 1px solid var(--sl-color-hairline);
 }
 
 #starlight__sidebar {
@@ -109,6 +114,7 @@ a {
 .content-panel a{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 6px;
 }

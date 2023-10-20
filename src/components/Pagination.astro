@@ -11,11 +11,9 @@ const isRtl = dir === 'rtl';
     {
       prev && (
         <a href={prev.href} rel="prev">
-          <span class="hover:underline flex gap-2">
+          <span class="hover:underline flex dark:text-white text-slate-800 gap-1">
             <Icon class="w-6" pack="lucide" name="chevron-left" />
-            <span class="link-title dark:text-slate-300 text-black text-base hover:underline">
-              {prev.label}
-            </span>
+            <span class="link-title text-base">{prev.label}</span>
           </span>
         </a>
       )
@@ -24,8 +22,8 @@ const isRtl = dir === 'rtl';
   {
     next && (
       <a href={next.href} rel="next">
-        <span class="hover:underline flex gap-2">
-          <span class="link-title dark:text-slate-300 text-black text-base">{next.label}</span>
+        <span class="hover:underline flex dark:text-white text-slate-800 gap-1">
+          <span class="link-title  text-base">{next.label}</span>
           <Icon class="w-6" pack="lucide" name="chevron-right" />
         </span>
       </a>

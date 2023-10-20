@@ -1,5 +1,6 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
+import { Icon } from 'astro-icon';
 
 import {
   LanguageSelect,
@@ -21,7 +22,46 @@ import {
     <div class="sl-flex social-icons">
       <SocialIcons {...Astro.props} />
     </div>
-    <ThemeSelect {...Astro.props} />
-    <LanguageSelect {...Astro.props} />
+
+    <button
+      id="toggler"
+      class="bg-transparent dark:hover:text-gray-300 hover:text-gray-600 hover:cursor-pointer"
+    >
+      <Icon id="sun" class="w-6" pack="lucide" name="sun" />
+      <Icon id="moon" class="w-6" pack="lucide" name="moon" />
+    </button>
   </div>
 </div>
+
+<script>
+  // event listener for toggling dark mode
+  const toggler = document.getElementById('toggler');
+  const sun = document.getElementById('sun');
+  const moon = document.getElementById('moon');
+
+  // local storage for starlight-theme dark or light
+  const theme = localStorage.getItem('starlight-theme');
+  type Theme = 'auto' | 'dark' | 'light';
+
+  if (theme === 'dark') {
+    sun.style.display = 'none';
+    moon.style.display = 'block';
+  } else {
+    sun.style.display = 'block';
+    moon.style.display = 'none';
+  }
+
+  toggler.addEventListener('click', () => {
+    if (sun.style.display === 'none') {
+      sun.style.display = 'block';
+      moon.style.display = 'none';
+      localStorage.setItem('starlight-theme', 'light');
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      sun.style.display = 'none';
+      moon.style.display = 'block';
+      localStorage.setItem('starlight-theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  });
+</script>

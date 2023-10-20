@@ -3,6 +3,9 @@ title: Introduction
 description: FoxDocs is a personal resource for documentation and guides relating to PHP, Laravel, and other web development topics.
 sidebar:
   order: 1
+banner:
+  content: |
+    Welcome to FoxDocs!
 ---
 
 ## About the website
