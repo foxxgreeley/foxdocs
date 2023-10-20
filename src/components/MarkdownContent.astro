@@ -2,7 +2,7 @@
 import type { Props } from '@astrojs/starlight/props';
 ---
 
-<div class="content"><slot /></div>
+<div class="content text-md"><slot /></div>
 
 <style>
   .content
@@ -15,12 +15,14 @@ import type { Props } from '@astrojs/starlight/props';
 
   /* H1 */
   .content :global(h1:not(:where(.not-content *))) {
-    font-size: 32px;
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 
   /* H2 */
   .content :global(h2:not(:where(.not-content *))) {
-    font-size: 26px;
+    font-weight: 700;
+    font-size: 1.5em;
   }
 
   /* H3 */
