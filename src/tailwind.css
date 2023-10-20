@@ -95,6 +95,11 @@ html {
     --astro-code-token-link: var(--sl-color-blue-high);
 }
 
+.main-pane .sl-container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .right-sidebar{
 	border-left: 1px solid var(--sl-color-hairline);
 }
