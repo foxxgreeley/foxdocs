@@ -6,7 +6,6 @@
 
 html {
     scroll-behavior: smooth;
-	background-image: linear-gradient(180deg, rgb(24, 38, 69), rgb(15, 23, 42));
 }
 
 *:not(p) {
@@ -23,13 +22,12 @@ html {
 	--sl-color-accent: #2d3fe2;
 	--sl-color-accent-high: #ffffff !important;
 
-	--sl-color-bg: transparent;
+	--sl-color-bg: rgb(15, 23, 42); /* Background | Markdown & ToC */
 	--sl-color-gray-6: var(--sl-color-bg); /* Sidebar BG */
 
-	--sl-color-gray-5: rgb(70, 84, 109); /* Borders */
+	--sl-color-gray-5: rgb(56, 66, 85); /* Borders */
 	--sl-color-black: rgb(30 41 59); /* Sidebar Borders */
-	--sl-color-hairline: rgb(48, 65, 99); /* Markdown Inline Borders */
-	--sl-color-hairline-shade: rgb(48, 65, 99); /* Markdown Inline Borders */
+	--sl-color-hairline: rgb(70, 81, 103); /* Markdown Inline Borders */
 
 	--text-base-color: #c6d9f3;
 
@@ -70,7 +68,7 @@ html {
 	--sl-color-gray-5: rgb(221, 231, 241); /* Borders */
 	--sl-color-black: var(--sl-color-gray-5); /* Sidebar Borders */
 	--sl-color-hairline:  var(--sl-color-gray-5); /* Markdown Inline Borders */
-	
+
 	--text-base-color: rgb(15 23 42);
 	--sl-color-white: rgb(15 23 42); /* Headings */
 	--sl-color-text-invert: rgb(255, 255, 255) !important; /* Body Text */
@@ -103,16 +101,6 @@ html {
 
 #starlight__sidebar {
     background-color: var(--sl-color-bg-nav) !important;
-}
-
-[data-theme='dark'] .header {
-	background: rgba(24, 38, 69, 0.8);
-	backdrop-filter: blur(4px);
-}
-
-.header {
-	background: rgba(255, 255, 255, 0.8);
-	backdrop-filter: blur(4px);
 }
 
 .sidebar-content a:not([aria-current="page"]):hover {
