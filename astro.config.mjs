@@ -48,11 +48,13 @@ export default defineConfig({
     './src/tailwind.css'],
     components: {
       Header: './src/components/Header.astro',
+      Footer: './src/components/Footer.astro',
       Hero: './src/components/Hero.astro',
       SocialIcons: './src/components/SocialIcons.astro',
       Pagination: './src/components/Pagination.astro',
       MarkdownContent: './src/components/MarkdownContent.astro',
       PageTitle: './src/components/PageTitle.astro',
+      Sidebar: './src/components/Sidebar.astro',
     },
     social: {
       github: 'https://github.com/foxxgreeley'

@@ -63,7 +63,7 @@ html {
 	--sl-color-accent-high: #ffffff !important;
 
 	--sl-color-bg: rgb(255, 255, 255); /* Background | Markdown & ToC */
-	--sl-color-gray-6: rgb(169, 184, 200); /* Sidebar BG */
+	--sl-color-gray-6: rgb(182, 195, 209); /* Sidebar BG */
 
 	--sl-color-gray-5: rgb(221, 231, 241); /* Borders */
 	--sl-color-black: var(--sl-color-gray-5); /* Sidebar Borders */
