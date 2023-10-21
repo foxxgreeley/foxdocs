@@ -61,7 +61,7 @@ html {
 	--black: rgb(20, 25, 40);
 	--bg-color: var(--white);
 	--text-color: 240 10% 5%;
-	--text-muted: rgb(80, 80, 80);
+	--text-muted: rgb(0, 0, 0);
 	
 	--accent-color: var(--black);
 	--accent-alt-color: rgb(230, 230, 230);
@@ -91,7 +91,7 @@ html {
 	/* Code Blocks */
 	--astro-code-color-text: var(--white);
 	--astro-code-token-keyword: var(--white);
-	--astro-code-color-background: var(--accent-color) !important;
+	--astro-code-color-background: rgb(25, 25, 25) !important;
     --astro-code-token-string: rgb(203 213 225) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
@@ -129,6 +129,9 @@ header.header {
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 6px;
+}
+.content-panel a:hover{
+	text-decoration: none;
 }
 
 .content-panel li{
