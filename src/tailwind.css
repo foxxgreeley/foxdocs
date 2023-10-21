@@ -18,7 +18,7 @@ html {
 	--sl-sidebar-width: 20rem;
 
 	--white: rgb(255, 255, 255);
-	--black: 240 10% 3.9%;
+	--black: #121214;
 	--bg-color: var(--black);
 	--text-color: var(--white);
 	--text-muted: rgb(200, 200, 200);
@@ -27,10 +27,11 @@ html {
 	--accent-alt-color: rgb(25, 25, 25);
 
 	--sl-color-text: var(--text-color); /* Body Text */
-	--sl-color-gray-3: var(--text-color); /* ToC Text */
+	--sl-color-text-accent: var(--white); /* Body Text */
+	--sl-color-gray-3: var(--text-muted); /* ToC Text */
 	--sl-color-gray-2: var(--text-muted); /* Sidebar Text */
 
-	--sl-color-text-invert: var(--white); /* Invert Text Color (Actives) */
+	--sl-color-text-invert: var(--black); /* Invert Text Color (Actives) */
 	--sl-color-white: var(--white); /* Headings */
 	--sl-color-bg: var(--bg-color); /* Background */
 	--sl-color-gray-6: var(--bg-color); /* Sidebar BG */
@@ -60,15 +61,15 @@ html {
 	--black: rgb(20, 25, 40);
 	--bg-color: var(--white);
 	--text-color: 240 10% 5%;
-	--text-muted: rgb(125, 125, 125);
+	--text-muted: rgb(80, 80, 80);
 	
 	--accent-color: var(--black);
 	--accent-alt-color: rgb(230, 230, 230);
 
 	--sl-color-white: var(--black); /* Headings */
 	--sl-color-text: var(--text-color); /* Body Text */
-	--sl-color-gray-3: var(--text-color); /* ToC Text */
-	--sl-color-gray-2: var(--text-color); /* Sidebar Text */
+	--sl-color-gray-3: var(--text-muted); /* ToC Text */
+	--sl-color-gray-2: var(--text-muted); /* Sidebar Text */
 
 	--sl-color-gray-7: var(--white); /* Sidebar BG */
 	--sl-color-text-invert: var(--white); /* Invert Text Color (Actives) */
@@ -121,8 +122,6 @@ header.header {
 .site-title{
 	font-weight: bold;
 }
-
-
 
 .content-panel a{
 	display: flex;
