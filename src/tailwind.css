@@ -12,9 +12,9 @@ html {
 :root {
 
 	--sl-text-sm: 0.875rem !important;
-	--sl-text-base: 15px;
+	--sl-text-base: 14px;
     --sl-text-h1: 32px;
-
+	--sl-text-h5: var(--sl-text-base);
 	--sl-sidebar-width: 20rem;
 
 	--white: rgb(255, 255, 255);

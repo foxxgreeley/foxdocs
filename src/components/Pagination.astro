@@ -6,11 +6,11 @@ const { prev, next } = pagination;
 const isRtl = dir === 'rtl';
 ---
 
-<div class="flex justify-between" dir={dir}>
-  <div class="">
+<div class="flex justify-between p-2" dir={dir}>
+  <div>
     {
       prev && (
-        <a href={prev.href} rel="prev">
+        <a href={prev.href} rel="prev" class="border py-2 ps-2 pe-4 rounded-md">
           <span class="hover:underline flex dark:text-white text-slate-800 gap-1">
             <Icon class="w-6" pack="lucide" name="chevron-left" />
             <span class="link-title text-base">{prev.label}</span>
@@ -19,22 +19,24 @@ const isRtl = dir === 'rtl';
       )
     }
   </div>
-  {
-    next && (
-      <a href={next.href} rel="next">
-        <span class="hover:underline flex dark:text-white text-slate-800 gap-1">
-          <span class="link-title  text-base">{next.label}</span>
-          <Icon class="w-6" pack="lucide" name="chevron-right" />
-        </span>
-      </a>
-    )
-  }
-</div>
+  <div>
+    {
+      next && (
+        <a href={next.href} rel="next" class="border py-2 ps-4 pe-2 rounded-md">
+          <span class="hover:underline flex dark:text-white text-slate-800 gap-1">
+            <span class="link-title text-base">{next.label}</span>
+            <Icon class="w-6" pack="lucide" name="chevron-right" />
+          </span>
+        </a>
+      )
+    }
+  </div>
 
-<style>
-  .link-title,
-  a {
-    color: var(--color-text);
-    text-decoration: none;
-  }
-</style>
+  <style>
+    .link-title,
+    a {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+  </style>
+</div>

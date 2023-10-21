@@ -2,8 +2,10 @@
 import type { Props } from '@astrojs/starlight/props';
 ---
 
-<h1 id="_top">{Astro.props.entry.data.title}</h1>
-<p class="mt-2">{Astro.props.entry.data.description}</p>
+<div class="p-2">
+  <h1 id="_top">{Astro.props.entry.data.title}</h1>
+  <p class="mt-2">{Astro.props.entry.data.description}</p>
+</div>
 
 <style>
   h1 {
