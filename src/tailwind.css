@@ -8,22 +8,18 @@ html {
     scroll-behavior: smooth;
 }
 
-*:not(p) {
-    transition: all 0.05s ease !important;
-}
-
 /* Dark mode colors. */
 :root {
 
-	--sl-sidebar-width: 16.75rem;
+	--sl-sidebar-width: 20rem;
 
 	--sl-text-sm: 0.875rem !important;
 	--sl-text-base: 15px;
     --sl-text-h1: 32px;
 
 	--sl-color-accent-low: rgb(255, 255, 255);
-	--sl-color-accent: #2d3fe2;
-	--sl-color-accent-high: #ffffff !important;
+	--sl-color-accent: #c6d9f3;
+	--sl-color-accent-high: var(--sl-color-accent) !important;
 
 	--sl-color-bg: rgb(15, 23, 42); /* Background | Markdown & ToC */
 	--sl-color-gray-6: var(--sl-color-bg); /* Sidebar BG */
@@ -62,13 +58,13 @@ html {
 :root[data-theme='light'] {
 	--sl-color-bg-nav: rgb(255, 255, 255); /* Nav BG */
 	--sl-color-accent-low: rgb(255, 255, 255);
-	--sl-color-accent: rgb(20, 33, 47);
-	--sl-color-accent-high: #ffffff !important;
+	--sl-color-accent: rgb(25, 25, 25);
+	--sl-color-accent-high: rgb(233, 233, 233) !important;
 
 	--sl-color-bg: rgb(255, 255, 255); /* Background | Markdown & ToC */
-	--sl-color-gray-6: rgb(182, 195, 209); /* Sidebar BG */
+	--sl-color-gray-6: var(--sl-color-accent-high); /* Sidebar BG */
 
-	--sl-color-gray-5: rgb(221, 231, 241); /* Borders */
+	--sl-color-gray-5: var(--sl-color-accent-high); /* Borders */
 	--sl-color-black: var(--sl-color-gray-5); /* Sidebar Borders */
 	--sl-color-hairline:  var(--sl-color-gray-5); /* Markdown Inline Borders */
 
@@ -98,6 +94,7 @@ html {
     --astro-code-token-link: var(--sl-color-blue-high);
 }
 
+/* Center Markdown Content */
 .main-pane .sl-container {
 	margin-left: auto;
 	margin-right: auto;
@@ -115,9 +112,11 @@ html {
 	background-color: var(--sl-color-gray-6) !important;
 }
 
-a {
-    text-decoration: none !important;
+.site-title{
+	font-weight: bold;
 }
+
+
 
 .content-panel a{
 	display: flex;
@@ -157,4 +156,26 @@ starlight-toc span{
 
 a[aria-current="page"] .sl-badge {
 	outline: none;
+}
+
+.right-sidebar-container, .sidebar-pane {
+	width: var(--sl-sidebar-width);
+}
+
+.main-pane{
+	width: 100% !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-frame div{
+	justify-content: space-between;
+}
+
+.content-panel h1{
+	font-weight: bolder;
+}
+
+.content-panel h2{
+	font-weight: bold;
 }

@@ -12,11 +12,11 @@ const links = Object.entries(config.social || {}) as [Platform, SocialConfig][];
   links.length > 0 && (
     <>
       {links.map(([platform, { label, url }]) => (
-        <a href={url} rel="me" class="flex items-center px-4">
+        <a href={url} rel="me" class="flex items-center px-2">
           <span class="sr-only">{label}</span>
           <Icon
             class="text-black dark:text-white"
-            pack="lucide"
+            pack="uil"
             name="github"
             color="white"
             size="1.5rem"
