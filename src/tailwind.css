@@ -11,87 +11,84 @@ html {
 /* Dark mode colors. */
 :root {
 
-	--sl-sidebar-width: 20rem;
-
 	--sl-text-sm: 0.875rem !important;
 	--sl-text-base: 15px;
     --sl-text-h1: 32px;
 
-	--sl-color-accent-low: rgb(255, 255, 255);
-	--sl-color-accent: #c6d9f3;
-	--sl-color-accent-high: var(--sl-color-accent) !important;
+	--sl-sidebar-width: 20rem;
 
-	--sl-color-bg: rgb(15, 23, 42); /* Background | Markdown & ToC */
-	--sl-color-gray-6: var(--sl-color-bg); /* Sidebar BG */
+	--white: rgb(255, 255, 255);
+	--black: rgb(15, 25, 40);
+	--bg-color: var(--black);
+	--text-color: #c6d9f3;
+	
+	--accent-color: #c6d9f3;
+	--accent-alt-color: rgb(30 41 59);
 
-	--sl-color-gray-5: rgb(56, 66, 85); /* Borders */
-	--sl-color-black: rgb(30 41 59); /* Sidebar Borders */
-	--sl-color-hairline: rgb(70, 81, 103); /* Markdown Inline Borders */
+	--sl-color-text: var(--text-color); /* Body Text */
+	--sl-color-gray-3: var(--text-color); /* ToC Text */
+	--sl-color-gray-2: var(--text-color); /* Sidebar Text */
 
-	--text-base-color: #c6d9f3;
+	--sl-color-text-invert: var(--accent-alt-color); /* Invert Text Color (Actives) */
+	--sl-color-white: var(--white); /* Headings */
+	--sl-color-bg: var(--bg-color); /* Background */
+	--sl-color-gray-6: var(--bg-color); /* Sidebar BG */
 
-	--sl-color-white: rgb(226 232 240); /* Headings */
-	--sl-color-text-invert: rgb(15, 23, 42) !important; /* Body Text */
+	--sl-color-black: var(--accent-alt-color); /* Sidebar Borders */
+	--sl-color-gray-5: var(--accent-alt-color); /* Borders */
+	--sl-color-hairline: var(--accent-alt-color); /* Markdown Inline Borders */
+	
+	--sl-color-accent-low: var(--white);
+	--sl-color-accent: var(--accent-color);
+	--sl-color-accent-high: var(--accent-color);
 
-	--sl-color-text: var(--text-base-color) !important; /* Body Text */
-	--sl-color-gray-3: var(--text-base-color) !important; /* ToC Text */
-	--sl-color-gray-2: var(--text-base-color) !important; /* Sidebar Text */
 	--sl-color-gray-1: var(--sl-color-white) !important;
-	--sl-color-gray-4: #545861;
-
-	--sl-code-bg: var(--sl-color-black); /* Code Blocks */
+	--sl-color-gray-4: var(--accent-color);
 
 	/* Code Blocks */
-	--astro-code-color-text: var(--sl-color-white);
-    --astro-code-color-background: var(--sl-color-gray-6);
-    --astro-code-token-constant: var(--sl-color-blue-high);
     --astro-code-token-string: rgb(203 213 225) !important;
-    --astro-code-token-comment: var(--sl-color-gray-2);
-    --astro-code-token-keyword: var(--sl-color-purple-high);
-    --astro-code-token-parameter: var(--sl-color-red-high);
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
-    --astro-code-token-punctuation: var(--sl-color-gray-2);
-    --astro-code-token-link: var(--sl-color-blue-high);
 }
 /* Light mode colors. */
 :root[data-theme='light'] {
-	--sl-color-bg-nav: rgb(255, 255, 255); /* Nav BG */
-	--sl-color-accent-low: rgb(255, 255, 255);
-	--sl-color-accent: rgb(25, 25, 25);
-	--sl-color-accent-high: rgb(233, 233, 233) !important;
+	--white: rgb(250, 250, 250);
+	--black: rgb(20, 25, 40);
+	--bg-color: var(--white);
+	--text-color: 240 10% 5%;
+	
+	--accent-color: var(--black);
+	--accent-alt-color: rgb(230, 230, 230);
 
-	--sl-color-bg: rgb(255, 255, 255); /* Background | Markdown & ToC */
-	--sl-color-gray-6: var(--sl-color-accent-high); /* Sidebar BG */
+	--sl-color-white: var(--black); /* Headings */
+	--sl-color-text: var(--text-color); /* Body Text */
+	--sl-color-gray-3: var(--text-color); /* ToC Text */
+	--sl-color-gray-2: var(--text-color); /* Sidebar Text */
 
-	--sl-color-gray-5: var(--sl-color-accent-high); /* Borders */
-	--sl-color-black: var(--sl-color-gray-5); /* Sidebar Borders */
-	--sl-color-hairline:  var(--sl-color-gray-5); /* Markdown Inline Borders */
+	--sl-color-gray-7: var(--white); /* Sidebar BG */
+	--sl-color-text-invert: var(--white); /* Invert Text Color (Actives) */
 
-	--text-base-color: rgb(15 23 42);
-	--sl-color-white: rgb(15 23 42); /* Headings */
-	--sl-color-text-invert: rgb(255, 255, 255) !important; /* Body Text */
+	--sl-color-bg: var(--bg-color); /* Background */
+	--sl-color-gray-6: var(--accent-alt-color); /* Sidebar Borders */
 
-	--sl-color-text: var(--text-base-color) !important; /* Body Text */
-	--sl-color-gray-3: var(--text-base-color) !important; /* ToC Text */
-	--sl-color-gray-2: var(--text-base-color) !important; /* Sidebar Text */
+	--sl-color-black: var(--accent-alt-color); /* Sidebar Borders */
+	--sl-color-gray-5: var(--accent-alt-color); /* Borders */
+	--sl-color-hairline:var(--accent-alt-color); /* Markdown Inline Borders */
+	
+	--sl-color-accent-low: var(--white);
+	--sl-color-accent: var(--accent-color);
+	--sl-color-accent-high: var(--accent-color);
+
 	--sl-color-gray-1: var(--sl-color-white) !important;
-	--sl-color-gray-4: #545861;
-
-	--sl-code-bg: #17202e; /* Code Blocks */
+	--sl-color-gray-4: var(--accent-color);
 
 	/* Code Blocks */
-	--astro-code-color-text: var(--sl-color-white);
-    --astro-code-color-background: var(--sl-color-gray-6);
-    --astro-code-token-constant: var(--sl-color-blue-high);
+	--astro-code-color-text: var(--white);
+	--astro-code-token-keyword: var(--white);
+	--astro-code-color-background: var(--accent-color) !important;
     --astro-code-token-string: rgb(203 213 225) !important;
-    --astro-code-token-comment: var(--sl-color-gray-2);
-    --astro-code-token-keyword: var(--sl-color-purple-high);
-    --astro-code-token-parameter: var(--sl-color-red-high);
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
-    --astro-code-token-punctuation: var(--sl-color-gray-2);
-    --astro-code-token-link: var(--sl-color-blue-high);
 }
 
 /* Center Markdown Content */
@@ -145,7 +142,6 @@ li details ul ul details summary span{
 }
 
 .astro-code{
-	background-color: var(--sl-code-bg) !important;
 	border-radius: 10px;
 	font-size: 14px !important;
 }
