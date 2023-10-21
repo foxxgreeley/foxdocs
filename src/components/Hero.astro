@@ -2,25 +2,34 @@
 import type { Props } from '@astrojs/starlight/props';
 import CallToAction from './CallToAction.astro';
 const PAGE_TITLE_ID = 'FoxDocs';
-
+import { Icon } from 'astro-icon';
 const { data } = Astro.props.entry;
 const { title = data.title, tagline, image, actions = [] } = data.hero || {};
 ---
 
-<div class="flex flex-row-reverse flex-wrap py-20">
-  <div class="flex flex-col gap-10">
-    <div class="flex flex-col gap-5">
-      <h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
-      {tagline && <div class="tagline" set:html={tagline} />}
+<div class="flex flex-col justify-center dark:text-white text-black">
+  <div class="mx-auto py-20">
+    <Icon
+      class="text-black dark:text-white"
+      pack="lucide"
+      name="file-text"
+      color="white"
+      size="4rem"
+    />
+    <div class="flex flex-col gap-10 margin-auto">
+      <div class="flex flex-col gap-5">
+        <h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
+        {tagline && <div class="tagline" set:html={tagline} />}
+      </div>
+      {
+        actions.length > 0 && (
+          <div class="flex gap-10">
+            {actions.map(({ text, ...attrs }) => (
+              <CallToAction {...attrs} set:html={text} />
+            ))}
+          </div>
+        )
+      }
     </div>
-    {
-      actions.length > 0 && (
-        <div class="flex gap-5">
-          {actions.map(({ text, ...attrs }) => (
-            <CallToAction {...attrs} set:html={text} />
-          ))}
-        </div>
-      )
-    }
   </div>
 </div>

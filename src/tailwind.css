@@ -175,10 +175,6 @@ a[aria-current="page"] .sl-badge {
 	margin-right: auto;
 }
 
-.main-frame div{
-	justify-content: space-between;
-}
-
 .main-pane .content-panel:first-child .sl-container{
 	color: var(--text-muted) !important;
 }
