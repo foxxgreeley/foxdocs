@@ -18,24 +18,25 @@ html {
 	--sl-sidebar-width: 20rem;
 
 	--white: rgb(255, 255, 255);
-	--black: rgb(15, 25, 40);
+	--black: 240 10% 3.9%;
 	--bg-color: var(--black);
-	--text-color: #c6d9f3;
+	--text-color: var(--white);
+	--text-muted: rgb(200, 200, 200);
 	
-	--accent-color: #c6d9f3;
-	--accent-alt-color: rgb(30 41 59);
+	--accent-color: var(--black);
+	--accent-alt-color: rgb(25, 25, 25);
 
 	--sl-color-text: var(--text-color); /* Body Text */
 	--sl-color-gray-3: var(--text-color); /* ToC Text */
-	--sl-color-gray-2: var(--text-color); /* Sidebar Text */
+	--sl-color-gray-2: var(--text-muted); /* Sidebar Text */
 
-	--sl-color-text-invert: var(--accent-alt-color); /* Invert Text Color (Actives) */
+	--sl-color-text-invert: var(--white); /* Invert Text Color (Actives) */
 	--sl-color-white: var(--white); /* Headings */
 	--sl-color-bg: var(--bg-color); /* Background */
 	--sl-color-gray-6: var(--bg-color); /* Sidebar BG */
 
 	--sl-color-black: var(--accent-alt-color); /* Sidebar Borders */
-	--sl-color-gray-5: var(--accent-alt-color); /* Borders */
+	--sl-color-gray-5: #2f2f2f; /* Borders */
 	--sl-color-hairline: var(--accent-alt-color); /* Markdown Inline Borders */
 	
 	--sl-color-accent-low: var(--white);
@@ -46,6 +47,9 @@ html {
 	--sl-color-gray-4: var(--accent-color);
 
 	/* Code Blocks */
+	--astro-code-color-text: var(--white);
+	--astro-code-token-keyword: var(--white);
+	--astro-code-color-background: var(--accent-alt-color) !important;
     --astro-code-token-string: rgb(203 213 225) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
@@ -56,6 +60,7 @@ html {
 	--black: rgb(20, 25, 40);
 	--bg-color: var(--white);
 	--text-color: 240 10% 5%;
+	--text-muted: rgb(125, 125, 125);
 	
 	--accent-color: var(--black);
 	--accent-alt-color: rgb(230, 230, 230);
@@ -89,6 +94,10 @@ html {
     --astro-code-token-string: rgb(203 213 225) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
+}
+
+header.header {
+	background-color: var(--bg-color) !important;
 }
 
 /* Center Markdown Content */
@@ -166,6 +175,10 @@ a[aria-current="page"] .sl-badge {
 
 .main-frame div{
 	justify-content: space-between;
+}
+
+.main-pane .content-panel:first-child .sl-container{
+	color: var(--text-muted) !important;
 }
 
 .content-panel h1{
