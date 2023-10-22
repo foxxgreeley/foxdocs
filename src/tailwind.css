@@ -51,9 +51,11 @@ html {
 	--astro-code-color-text: var(--white);
 	--astro-code-token-keyword: var(--white);
 	--astro-code-color-background: var(--accent-alt-color) !important;
+	--astro-code-token-punctuation: var(--white);
     --astro-code-token-string: rgb(203 213 225) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
     --astro-code-token-string-expression: rgb(125 211 252) !important;
+	--astro-code-token-constant: rgb(255 203 107) !important;
 }
 /* Light mode colors. */
 :root[data-theme='light'] {
@@ -92,6 +94,7 @@ html {
 	--astro-code-color-text: var(--white);
 	--astro-code-token-keyword: var(--white);
 	--astro-code-color-background: rgb(25, 25, 25) !important;
+	--astro-code-token-punctuation: var(--white);
     --astro-code-token-string: rgb(203 213 225) !important;
  	--astro-code-token-comment: rgb(180, 180, 180) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
@@ -102,6 +105,22 @@ html {
 header.header {
 	background-color: var(--bg-color) !important;
 }
+
+.content-panel button {
+	background-color: var(--sl-color-text-accent) !important;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.content-panel button span{
+	color: var(--sl-color-text-invert) !important;
+}
+
+.content-panel button a{
+	color: var(--sl-color-text-invert) !important;
+	text-decoration: none;
+}
+
 
 /* Center Markdown Content */
 .main-pane .sl-container {
