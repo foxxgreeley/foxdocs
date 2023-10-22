@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# private files
+/src/content/docs/*
+!/src/content/docs/getting-started
+!/src/content/docs/404.mdx
+!/src/content/docs/index.mdx
