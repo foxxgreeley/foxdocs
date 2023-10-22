@@ -50,7 +50,7 @@ html {
 	/* Code Blocks */
 	--astro-code-color-text: var(--white);
 	--astro-code-token-keyword: var(--white);
-	--astro-code-color-background: var(--accent-alt-color) !important;
+	--astro-code-color-background: rgb(24 24 27) !important;
 	--astro-code-token-punctuation: var(--white);
     --astro-code-token-string: rgb(203 213 225) !important;
     --astro-code-token-function: rgb(244 114 182) !important;
@@ -93,7 +93,6 @@ html {
 	/* Code Blocks */
 	--astro-code-color-text: var(--white);
 	--astro-code-token-keyword: var(--white);
-	--astro-code-color-background: rgb(25, 25, 25) !important;
 	--astro-code-token-punctuation: var(--white);
     --astro-code-token-string: rgb(203 213 225) !important;
  	--astro-code-token-comment: rgb(180, 180, 180) !important;
