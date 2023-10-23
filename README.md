@@ -1,6 +1,12 @@
 # FoxDocs | A Starlight Project
 FoxDocs is a personal documentation website hosting guides relating to PHP, Laravel, and other web development topics.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/zeZbm2U.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://i.imgur.com/kzkKOM7.png">
+  <img alt="FoxDocs Website Example" src="https://i.imgur.com/zeZbm2U.png" width="1000">
+</picture>
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
