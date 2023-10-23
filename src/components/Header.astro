@@ -11,7 +11,7 @@ import {
 } from 'virtual:starlight/components';
 ---
 
-<div class="flex justify-between items-center align-middle content-center" transition:persist>
+<div class="flex justify-between items-center align-middle content-center">
   <div class="flex align-middle items-center content-center gap-2">
     <p class="text-xl font-bold">
       <SiteTitle {...Astro.props} />
@@ -44,7 +44,7 @@ import {
       </g>
     </svg>
   </div>
-  <div class="sl-flex min-w-[350px]">
+  <div transition:persist class="sl-flex min-w-[350px]">
     <Search {...Astro.props} />
   </div>
   <div class="sl-hidden md:sl-flex right-group">
@@ -53,6 +53,7 @@ import {
     </div>
 
     <button
+      transition:persist
       id="toggler"
       class="bg-transparent dark:hover:text-gray-300 hover:text-gray-600 hover:cursor-pointer"
     >
