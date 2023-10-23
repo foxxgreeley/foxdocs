@@ -1,0 +1,72 @@
+---
+title: The N + 1 Problem
+description: When working with databases in Laravel, you will often come across the N + 1 problem.
+sidebar:
+  order: 7
+---
+
+## The Problem 
+This is where you have a query that returns a collection of models, and then you loop over the collection and perform a query for each model. 
+This is a problem because it results in a large number of queries being executed against the database.
+
+For example, let's say we have a `User` model that has many `Post` models.
+    
+```php
+class User extends Model
+{
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+}
+```
+
+```php
+class Post extends Model
+{
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
+```
+
+```php
+$users = User::all();
+
+foreach ($users as $user) {
+    echo $user->posts->count();
+}
+```
+
+In this example, we are retrieving all users from the database, and then looping over the collection and accessing the `posts` relationship.
+This will result in a query being executed for each user to retrieve the related posts.
+
+### Listening to Queries
+
+To help identify N + 1 problems, you can listen to the route queries are executed on using the `DB::listen` method.
+This method accepts a closure that will be called with the query and bindings when a query is executed.
+
+```php
+DB::listen(function ($query) {
+    logger($query->sql, $query->bindings);
+});
+```
+
+This log file will be in `storage/logs/laravel.log`.
+
+## The Solution
+
+### Eager Loading
+
+The solution to the N + 1 problem is to eager load the relationship when retrieving the models from the database.
+This will result in a single query being executed to retrieve all the related models.
+
+```php
+$users = User::with('posts')->get();
+
+foreach ($users as $user) {
+    echo $user->posts->count();
+}
+```
+
