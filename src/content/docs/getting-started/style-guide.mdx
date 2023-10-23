@@ -1,0 +1,137 @@
+---
+title: Style Guide
+description: This is a testing page for the styling the site.
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Code } from 'astro:components';
+
+Guides lead a user through a specific task they want to accomplish, often with a sequence of steps.
+Writing a good guide requires thinking about what your users are trying to do.
+
+<Tabs>
+	<TabItem label="Stars">Sirius, Vega, Betelgeuse</TabItem>
+	<TabItem label="Moons">Io, Europa, Ganymede</TabItem>
+</Tabs>
+
+```html
+ 
+<div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+  <div>
+    <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><!-- ... --></svg>
+    </span>
+  </div>
+  <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">Writes Upside-Down</h3>
+  <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+  </p>
+</div>
+
+```
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+
+
+## Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+
+
+## Blockquotes
+
+
+> Blockquotes can also be nested...
+>> ...by using additional greater-than signs right next to each other...
+> > > ...or with spaces between arrows.
+
+
+## Lists
+
+Unordered
+
++ Create a list by starting a line with `+`, `-`, or `*`
++ Sub-lists are made by indenting 2 spaces:
+  - Marker character change forces new list start:
+    * Ac tristique libero volutpat at
+    + Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
++ Very easy!
+
+Ordered
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+
+
+1. You can use sequential numbers...
+1. ...or keep all the numbers as `1.`
+
+## Code
+
+Inline `<p> code </p>`
+
+Indented code
+
+```html
+ 
+<div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+  <div>
+    <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><!-- ... --></svg>
+    </span>
+  </div>
+  <h3 class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">Writes Upside-Down</h3>
+  <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+    The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
+  </p>
+</div>
+
+```
+
+## Tables
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+Right aligned columns
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+
+## Links
+
+[External link](https://www.google.com)
+[Internal link](/getting-started/introduction/)
+
+
+## Images
+
+![Starfield Screenshot](https://i.imgur.com/QdC5wDq.jpeg)
+
+Like links, Images also have a footnote style syntax
+
+### Footnotes
+
+Footnote 1 link[^first].
+
+Footnote 2 link[^second].
