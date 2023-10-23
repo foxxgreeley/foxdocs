@@ -1,0 +1,82 @@
+---
+title: Models
+description: Models are where you define functions that interact with your database. 
+sidebar:
+  order: 4
+---
+<button> [Official Laravel Documentation](https://laravel.com/docs/10.x/eloquent) </button>
+
+## About Models
+Models are typically stored in the `app/Models` directory.
+
+Eloquent models are typically created using Artisan's `make:model` command. This command will create a model stub class in the `app/Models` directory.
+
+### Creating a Model
+To create a model, run the following command in your terminal:
+```bash
+php artisan make:model Models/ModelName
+```
+This will create a new model in the `app/Models` directory.
+
+### Defining a Model
+A model is a class that extends the `Illuminate\Database\Eloquent\Model` class.
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class ModelName extends Model
+{
+    // 
+}
+```
+
+## Structure
+Below is an example of a model with all of its properties and methods.
+```php
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+}
+```
+## Foreign Keys
+Foreign keys are used to link two tables together. 
+For example, a `users` table may have a `role_id` column that references the `id` column in the `roles` table. This is a one-to-many relationship, where a user can only have one role, but a role can have many users.

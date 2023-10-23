@@ -1,0 +1,51 @@
+---
+title: Blade
+description: Blade is Laravel's powerful, custom templating engine.
+sidebar:
+  order: 3
+---
+<button> [Official Laravel Documentation](https://laravel.com/docs/10.x/blade) </button>
+
+## What is Blade?
+Blade makes templating easier and works similarly to Vue 3
+in terms of syntax.
+
+For example:
+
+```php
+// Without Blade
+<?php echo $name; ?>
+
+// With Blade
+{{ $name }}
+```
+Note: This can only be achieved with .blade.php files.
+
+Blade files compile to plain PHP code and are cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade view files use the `.blade.php` file extension and are typically stored in the `resources/views` directory.
+
+## Directives
+Blade uses directives instead of PHP control structures to make it easier to write your views. All Blade directives start with the `@` symbol.
+
+
+```php
+@if (count($records) === 1)
+    I have one record!
+@elseif (count($records) > 1)
+    I have multiple records!
+@else
+    I don't have any records!
+@endif
+```
+
+## HTML Escaping
+If you want to have your variable rendered as HTML instead of as
+a string, you can use the `{!! !!}` syntax.
+
+```php
+{!! $name !!}
+```
+
+>There is a <b>downside</b> to this, however. If you are using user input, you should be careful as this can lead to XSS attacks.
+>
+> For instance, a user could have a post title as `<script>alert('hello')</script>`. If you were to use the `{!! !!}` syntax, the script would be executed.
+
