@@ -1,0 +1,47 @@
+---
+title: Factories
+description: The factory must grow!
+sidebar:
+  order: 9
+---
+
+## Basic Concepts
+Factories are located in the `database/factories` directory. They provide a convenient way to generate random data for your models and database.
+
+Seeders are good for creating a lot of data, but what do you do if you need to seed non-default data? For example, you may need to seed a user with a specific role, or a post with a specific status. 
+This is where factories come in.
+
+### Creating Factories
+
+Factories can be made with the following command:
+```bash
+php artisan make:factory PostFactory
+```
+or when making a model:
+```bash
+php artisan make:model Post -f
+```
+
+### Using Factories
+Then you can provide all of the fields you want to be filled in the factory and
+methods to generate random data for them. For example:
+```php
+
+use App\Post;
+use Faker\Generator as Faker;
+
+$factory->define(Post::class, function (Faker $faker) {
+    return [
+        'title' => $faker->sentence,
+        'body' => $faker->paragraph,
+        'published' => $faker->boolean,
+    ];
+});
+```
+
+Then you can use the factory in your seeders:
+```php
+factory(Post::class, 50)->create();
+```
+
+This will make 50 posts with random data.

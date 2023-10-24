@@ -63,10 +63,13 @@ The solution to the N + 1 problem is to eager load the relationship when retriev
 This will result in a single query being executed to retrieve all the related models.
 
 ```php
-$users = User::with('posts')->get();
+Route::get('blog', function () {
 
-foreach ($users as $user) {
-    echo $user->posts->count();
-}
+    return view('blog', [
+        // Order the posts by the published_at column in descending order
+        'posts' => Post::latest('published_at')->with('category', 'author')->get()
+    ]);
+
+});
+
 ```
-

@@ -48,3 +48,13 @@ To make something slotable, you will need to wrap it in `<x-layout>` tags. For e
 </x-layout>
 ```
 
+## Partials
+You can also use layouts to create partials. For example, if you want to create a partial called `header`, create a file called `header.blade.php` in the `resources/views/components` directory.
+```html
+<header>
+    <h1>My Blog</h1>
+</header>
+```
+
+Partials are good for things like hero sections, navigation bars, and footers.
+

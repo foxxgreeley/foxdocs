@@ -63,18 +63,16 @@ This will open up a PHP shell. In the below code, you will configure each table 
 
 From here, you can run the following commands to add a new user entry to the database:
 ```php
-// Each of these lines will fill a cell, then save() will save the entry to the database.
+// Each of these lines will fill a field/cell
 $user = new App\Models\User;
 $user->name = 'John Doe';
 $user->email = 'john.doe@gmail.com'
-$user->password = bcrypt('password');
+$user->password = bcrypt('password'); // Hashed
 
-$user->save();
+$user->save(); // This will save the user to the database.
 ```
 This will create a new user in the database.
 Note the `bcrypt` function. This is a Laravel helper function that hashes the password and prevents it from being stored as a string.
-
-$user->save() will save the user to the database.
 
 ## Finding a database entry
 If you wanted to find a user in the database, you can run the following tinker command:
