@@ -12,7 +12,7 @@ import {
 ---
 
 <div class="flex justify-between items-center align-middle content-center">
-  <div class="flex align-middle items-center content-center gap-2">
+  <div class="flex align-middle items-center content-center gap-2 w-[var(--logo-width)]">
     <p class="text-xl font-bold">
       <SiteTitle {...Astro.props} />
     </p>
@@ -44,10 +44,10 @@ import {
       </g>
     </svg>
   </div>
-  <div transition:persist class="sl-flex min-w-[350px]">
+  <div transition:persist class="sl-flex min-w-[300px]">
     <Search {...Astro.props} />
   </div>
-  <div class="sl-hidden md:sl-flex right-group">
+  <div class="hidden md:flex flex-row w-[var(--logo-width)] justify-end">
     <div class="sl-flex social-icons">
       <SocialIcons {...Astro.props} />
     </div>
