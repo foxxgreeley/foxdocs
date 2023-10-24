@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from "@astrojs/tailwind";
+import { astroDocsExpressiveCode } from "./integrations/expressive-code";
+
 import rehypeExternalLinks from 'rehype-external-links';
 import vue from "@astrojs/vue";
 
@@ -74,7 +76,9 @@ export default defineConfig({
       }
     }
   ]
-  }), tailwind({
+  }),
+  astroDocsExpressiveCode()
+  , tailwind({
     // Disable the default base styles:
     applyBaseStyles: false
   }), vue()]
