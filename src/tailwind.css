@@ -150,9 +150,19 @@ html {
 	border-top-right-radius: var(--code-block-radius) !important;
 }
 
+/* Border on non-defined file code blocks */
+.expressive-code .frame:not(:has(figcaption span)) pre{
+	border-top-left-radius: var(--code-block-radius) !important;
+	border-top-right-radius: var(--code-block-radius) !important;
+}
+
 .expressive-code .frame pre{
 	border-bottom-left-radius: var(--code-block-radius) !important;
 	border-bottom-right-radius: var(--code-block-radius) !important;
+}
+
+.copy button{
+	border-radius: 5px !important;
 }
 
 header.header {
