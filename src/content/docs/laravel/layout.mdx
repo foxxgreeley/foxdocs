@@ -58,3 +58,43 @@ You can also use layouts to create partials. For example, if you want to create 
 
 Partials are good for things like hero sections, navigation bars, and footers.
 
+## The loop
+You can also use layouts to create loops. For example, if you want to create a loop called `posts`, create a file called `posts.blade.php` in the `resources/views/components` directory.
+```html
+@foreach ($posts as $post)
+    <h1>{{ $post->title }}</h1>
+@endforeach
+```
+
+You can even check the iteration count and style based on that.
+```html
+@foreach ($posts as $post)
+    @if ($loop->even)
+        <h1>{{ $post->title }}</h1>
+    @else
+        <h2>{{ $post->title }}</h2>
+    @endif
+@endforeach
+```
+
+## Time Conversion
+You can also use layouts to convert time. For example, if you want to create a time converter called
+ `time`, create a file called `time.blade.php` in the `resources/views/components` directory. This uses
+ the carbon library to convert the time.
+```html
+{{ $time->diffForHumans() }}
+```
+
+## Passing Props to Components
+You can pass props to components and layouts. For example, if you want to pass a prop called `post` 
+to a component called `single-post`, create a file called `single-post.blade.php` in the `resources/views/components` directory.
+```html
+@props(['post']) // This is the prop being retrieved
+<h1>{{ $post->title }}</h1>
+```
+
+Then, in the file where you are using the component, you can pass the prop like this:
+```html
+// this is where the prop is being passed
+<x-single-post :post="$post" />
+```

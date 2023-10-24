@@ -85,3 +85,34 @@ Route::patch($uri, $callback);
 Route::delete($uri, $callback);
 Route::options($uri, $callback);
 ```
+
+## Route Naming 
+You may also specify names for routes. These names can be used to conveniently generate URLs or redirects to specific routes. 
+
+They can also be used to check if a user is currently on a given route. See below for an example of this.
+
+```php
+Route::get('user/profile', function () {
+    //
+}) -> name('profile');
+```
+and then in a view you can use the route helper to generate a URL to that route:
+```php
+<a href="{{ route('profile') }}">Profile</a>
+```
+## Controller Routing
+You can use a controller like `PostsController` to handle your routes. 
+```php
+Route::get('blog', [PostController::class, 'index'])->name('blog');
+```
+while your `PostController` would look like this:
+```php
+class PostController extends Controller
+{
+    public function index()
+    {
+        return view('blog.index');
+    }
+}
+```
+This is a good way to keep all route logic in one place and keep your routes file clean.
