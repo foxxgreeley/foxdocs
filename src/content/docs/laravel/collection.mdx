@@ -1,0 +1,29 @@
+---
+title: Collections
+description: A fluent, convenient wrapper for working with arrays of data
+sidebar:
+  order: 3.2
+---
+
+# Collections
+The `Illuminate\Support\Collection` class provides a fluent, convenient wrapper for working with arrays of data.
+
+## Creating Collections
+You may create a collection by passing an array to the `collect` helper function. The `collect` function returns an instance of the `Illuminate\Support\Collection` class:
+
+```php
+$collection = collect([1, 2, 3]);
+```
+
+This allows you to use helpful Laravel collection methods like `map` and `filter`:
+
+```php
+$filtered = $collection->filter(function ($value, $key) {
+    return $value > 2;
+});
+
+$filtered->all();
+
+// [3]
+```
+
