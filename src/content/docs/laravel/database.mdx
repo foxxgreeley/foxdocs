@@ -2,29 +2,33 @@
 title: Databases
 description: Change the database connection used by the application.
 sidebar:
-  order: 6
+  order: 3
 ---
 
-## Defining Connections
-The configuration for Laravel's database services is located in your application's `config/database.php` configuration file.
+## Configuration
+In Laravel, databases are located in your application's `config/database.php` configuration file. They are used to store and manage data for your web application. 
+Whether you need to save user information, product details, or any other kind of data, Laravel provides a convenient and efficient way to interact with databases.
 
-I would recommend using HeidiSQL to manage your database connections.
+Recommended database management/connection tools: 
+[HeidiSQL](https://www.heidisql.com/)
+[TablePlus](https://tableplus.com/)
 
-## Using Sail with Docker Desktop
-To use artisan commands to interact with your database, you
-will need to use `sail` to run the commands. For example:
+### Using Artisan Commands
+Artisan commands allow you to interact with your database. To use artisan commands with your docker container, you
+will need to use `sail artisan` to run the commands instead of `php artisan`.
 
 ```bash
+# Laravel (no docker)
+php artisan migrate
+
+# Laravel Sail (docker)
 sail artisan migrate
 ```
-instead of:
 
-```bash
-php artisan migrate
-```
-## Configuration Format
-When using docker, the easiest connection for mysql is usually similar to below:
+### Database Config
+When using docker, the easiest connection for mysql will usually look similar to the configuration below:
 ```php
+// /config/database.php
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
@@ -35,8 +39,8 @@ FORWARD_DB_PORT=3306
 
 ```
 
-## Default Tables
-The default tables for Laravel are as follows:
+### Default Tables
+The preconfigured database comes with the following tables:
 
 ```php
 failed_jobs

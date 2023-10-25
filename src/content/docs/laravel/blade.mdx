@@ -2,7 +2,7 @@
 title: Blade
 description: Blade is Laravel's powerful, custom templating engine.
 sidebar:
-  order: 3
+  order: 1.1
 ---
 <button> [Official Laravel Documentation](https://laravel.com/docs/10.x/blade) </button>
 
@@ -23,7 +23,7 @@ Note: This can only be achieved with .blade.php files.
 
 Blade files compile to plain PHP code and are cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade view files use the `.blade.php` file extension and are typically stored in the `resources/views` directory.
 
-## Directives
+### Directives
 Blade uses directives instead of PHP control structures to make it easier to write your views. All Blade directives start with the `@` symbol.
 
 
@@ -37,7 +37,7 @@ Blade uses directives instead of PHP control structures to make it easier to wri
 @endif
 ```
 
-## HTML Escaping
+### HTML Escaping
 If you want to have your variable rendered as HTML instead of as
 a string, you can use the `{!! !!}` syntax.
 

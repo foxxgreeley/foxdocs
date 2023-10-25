@@ -1,0 +1,25 @@
+---
+title: Controllers
+description: Controllers are the heart of your application, as they determine how HTTP requests should be handled.
+sidebar:
+  order: 2.1
+---
+
+## Controller Routing
+You can use a controller like `PostsController` to handle your routes. 
+```php
+// /routes/web.php
+Route::get('blog', [PostController::class, 'index'])->name('blog');
+```
+while your `PostController` would look like this:
+```php
+// app/Http/Controllers/PostController.php
+class PostController extends Controller
+{
+    public function index()
+    {
+        return view('blog.index');
+    }
+}
+```
+This is a good way to keep all route logic in one place and keep your routes file clean.

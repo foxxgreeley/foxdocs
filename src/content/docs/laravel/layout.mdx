@@ -2,20 +2,21 @@
 title: Layouts
 description: Layouts help you wrap your app with a common template and slot in content.
 sidebar:
-  order: 5
+  order: 1.15
 ---
 <button> [Official Laravel Documentation](https://laravel.com/docs/10.x/blade#building-layouts) </button>
 
-## Structure
+## What are Layouts?
 Layouts in Laravel can be used to wrap your app with a common template. This is useful for having a common header and footer across all pages.
 
 It also comes in handy for fonts, stylesheets, and scripts that you want to include on every page.
 
-## Layouts
+## Creating a Layout
 To create a layout, create a component file in the `resources/views/components` directory. Any component file in this directory will be automatically registered with Laravel.
 
 For example, if you want to create a layout called `app`, create a file called `app.blade.php` in the `resources/views/components` directory.
 ```html
+// resources/views/components/app.blade.php
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +41,7 @@ For example, if you want to create a layout called `app`, create a file called `
 
 ```
 
-## Blade Components
+### Components
 To make something slotable, you will need to wrap it in `<x-layout>` tags. For example, if you want to make a page called `home`, create a file called `home.blade.php` in the `resources/views` directory.
 ```html
 <x-layout>
@@ -48,7 +49,28 @@ To make something slotable, you will need to wrap it in `<x-layout>` tags. For e
 </x-layout>
 ```
 
-## Partials
+### Props
+You can pass props to components and layouts. For example, if you want to pass a prop called `post` 
+to a component called `single-post`, create a file called `single-post.blade.php` in the `resources/views/components` directory.
+```html
+// resources/views/components/single-post.blade.php
+// This is the prop is being recieved
+@props(['post']) 
+
+<div class="single-post-container">
+    <h1>{{ $post->title }}</h1>
+    <div> {{ $post->body }} </div>
+</div>
+```
+
+Then, in the file where you are using the component, you can pass the prop like this:
+```html
+// resources/views/home.blade.php
+// this is where the prop is being passed
+<x-single-post :post="$post" />
+```
+
+### Partials
 You can also use layouts to create partials. For example, if you want to create a partial called `header`, create a file called `header.blade.php` in the `resources/views/components` directory.
 ```html
 <header>
@@ -58,7 +80,7 @@ You can also use layouts to create partials. For example, if you want to create 
 
 Partials are good for things like hero sections, navigation bars, and footers.
 
-## The loop
+### Loops
 You can also use layouts to create loops. For example, if you want to create a loop called `posts`, create a file called `posts.blade.php` in the `resources/views/components` directory.
 ```html
 @foreach ($posts as $post)
@@ -83,18 +105,4 @@ You can also use layouts to convert time. For example, if you want to create a t
  the carbon library to convert the time.
 ```html
 {{ $time->diffForHumans() }}
-```
-
-## Passing Props to Components
-You can pass props to components and layouts. For example, if you want to pass a prop called `post` 
-to a component called `single-post`, create a file called `single-post.blade.php` in the `resources/views/components` directory.
-```html
-@props(['post']) // This is the prop being retrieved
-<h1>{{ $post->title }}</h1>
-```
-
-Then, in the file where you are using the component, you can pass the prop like this:
-```html
-// this is where the prop is being passed
-<x-single-post :post="$post" />
 ```
