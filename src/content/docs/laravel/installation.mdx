@@ -4,20 +4,46 @@ description: Laravel is a web application framework with expressive, elegant syn
 sidebar:
   order: 1
 ---
+<button> [Official Laravel Documentation](https://laravel.com/docs/10.x/installation#laravel-and-docker) </button>
 
-## About Laravel
-There are many benefits to using Laravel.
+## Laravel Sail
+Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker development environment. 
+Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
 
-As a web framework, laravel is:
-- A progressive framework
-- Scalable
-- Built for the community
+## Installation & Setup
+Before we create a new Laravel application on your Windows machine, make sure to install Docker Desktop. 
+Next, you should ensure that Windows Subsystem for Linux 2 (WSL2) is installed and enabled. 
 
 
-### Frameworks & Tools used to build this site
+### New Projects
+Run the following command to start a new Laravel project:
 
-- [Astro](https://astro.build/) is the web framework used to build this site.
-- [TailwindCSS](https://tailwindcss.com/) is the CSS framework used to style this site.
-- [Vercel](https://vercel.com/) is the hosting platform used to deploy this site.
+```bash
+curl -s https://laravel.build/example-app | bash
+```
+After the project has been created, you can navigate to the application directory and start Laravel Sail.
 
-# Introduction
+```bash
+cd example-app
+
+./vendor/bin/sail up
+```
+### Existing Projects
+If you already have a Laravel project that you would like to add Docker support to, you may install Laravel Sail using Composer:
+
+```bash
+composer require laravel/sail --dev
+
+php artisan sail:install
+
+./vendor/bin/sail up
+```
+
+## Aliases
+Nobody wants to get stuck writing `./vendor/bin/sail` over and over again. Let's fix that by adding some aliases to our `.bashrc` file.
+
+```bash
+alias sail='bash vendor/bin/sail'
+```
+
+Now you can run `sail` commands from anywhere in your terminal. ( e.g `sail up` to start your containers)

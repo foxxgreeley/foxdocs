@@ -4,6 +4,7 @@ description: Change the database connection used by the application.
 sidebar:
   order: 3
 ---
+<button> [Official Laravel Documentation](https://laravel.com/docs/10.x/database) </button>
 
 ## Configuration
 In Laravel, databases are located in your application's `config/database.php` configuration file. They are used to store and manage data for your web application. 
@@ -39,7 +40,7 @@ FORWARD_DB_PORT=3306
 
 ```
 
-### Default Tables
+### Defaults
 The preconfigured database comes with the following tables:
 
 ```php
@@ -56,7 +57,6 @@ If you need to rollback your migrations, you can use the following command:
 ```bash
 php artisan migrate:rollback
 ```
-
 ## Adding a database entry
 If you wanted to add a new User to the database, you would do the following artisan
 command:

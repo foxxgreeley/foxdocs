@@ -4,45 +4,40 @@ description: When working with databases in Laravel, you will often come across 
 sidebar:
   order: 7
 ---
+<button> [Official Laravel Documentation](https://laravel.com/docs/10.x/eloquent#generating-model-classes) </button>
 
-## The Problem 
-This is where you have a query that returns a collection of models, and then you loop over the collection and perform a query for each model. 
+## What is N + 1?
+In short, it's when Laravel code runs too many database queries. 
+It happens because Eloquent allows developers to write a readable syntax with models, without digging deeper into what "magic" is happening under the hood.
+
 This is a problem because it results in a large number of queries being executed against the database.
 
-For example, let's say we have a `User` model that has many `Post` models.
+### The Problem
+For example, let's say we have a `Book` model 
+
+```php
+$books = Book::all();
+ 
+foreach ($books as $book) {
+    echo $book->author->name;
+}
+```
+In this example, we are retrieving all the books from the database and then looping over them to access the author relationship.
+
+But, if you have 100 books on the list, you will have 101 queries to the DB. Awful performance, although the code seemed innocent.
     
-```php
-class User extends Model
-{
-    public function posts()
-    {
-        return $this->hasMany(Post::class);
-    }
-}
-```
+### The Solution
+The solution to the N + 1 problem is to eager load the relationship when retrieving the models from the database.
+This will result in a single query being executed to retrieve all the related models.
 
 ```php
-class Post extends Model
-{
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-}
+// Instead of:
+$books = Book::all();
+ 
+// You should do:
+$books = Book::with('author')->get();
 ```
-
-```php
-$users = User::all();
-
-foreach ($users as $user) {
-    echo $user->posts->count();
-}
-```
-
-In this example, we are retrieving all users from the database, and then looping over the collection and accessing the `posts` relationship.
-This will result in a query being executed for each user to retrieve the related posts.
-
-### Listening to Queries
+## Diagnosing the Problem
 
 To help identify N + 1 problems, you can listen to the route queries are executed on using the `DB::listen` method.
 This method accepts a closure that will be called with the query and bindings when a query is executed.
@@ -55,21 +50,3 @@ DB::listen(function ($query) {
 
 This log file will be in `storage/logs/laravel.log`.
 
-## The Solution
-
-### Eager Loading
-
-The solution to the N + 1 problem is to eager load the relationship when retrieving the models from the database.
-This will result in a single query being executed to retrieve all the related models.
-
-```php
-Route::get('blog', function () {
-
-    return view('blog', [
-        // Order the posts by the published_at column in descending order
-        'posts' => Post::latest('published_at')->with('category', 'author')->get()
-    ]);
-
-});
-
-```
