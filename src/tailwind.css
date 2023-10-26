@@ -63,7 +63,7 @@ html {
 	/* New Code Blocks */
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
-	--theme-code-bg: rgb(24 24 27);
+	--theme-code-bg: rgb(37 42 55);
 	--theme-code-tabs: hsla(261, 40%, 21%, 1);
 	--theme-code-text: hsla(var(--color-base-white), 80%, 1);
 	--theme-navbar-bg: var(--theme-bg);
@@ -123,7 +123,7 @@ html {
 	/* New Code Blocks */
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
-	--theme-code-bg: rgb(24 24 27);
+	--theme-code-bg: rgb(37 42 55);
 	--theme-code-tabs: hsla(261, 40%, 21%, 1);
 	--theme-code-text: hsla(var(--color-base-white), 80%, 1);
 	--theme-navbar-bg: var(--theme-bg);
@@ -140,6 +140,24 @@ html {
 
 .frame {
 	box-shadow: none !important;
+}
+
+.frame.has-title:not(.is-terminal) .header {
+	opacity: 100% !important;
+	background: var(--sl-color-text-accent) !important;
+}
+
+.frame.has-title:not(.is-terminal) .title{
+	position: unset !important;
+	background: none !important;
+	color: var(--sl-color-text-invert) !important;
+	border: none !important;
+	font-weight: 600 !important;
+}
+
+
+.frame.has-title:not(.is-terminal) .title::after{
+	border: none !important;
 }
 
 .expressive-code .frame .header {
@@ -164,7 +182,25 @@ html {
 }
 
 .copy button{
+	opacity: 100% !important;
 	border-radius: 5px !important;
+	background: transparent !important;
+}
+
+.copy button:before{
+	border: none !important;
+	background: transparent !important;
+}
+
+.copy button::after{
+	-webkit-mask-image: url('assets/copy-icon.svg') !important;
+    mask-image: url('assets/copy-icon.svg') !important;
+	opacity: 25%;
+	margin: 0.275rem !important;
+}
+
+.copy button:hover::after{
+	opacity: 100%;
 }
 
 header.header {
@@ -172,7 +208,7 @@ header.header {
 }
 
 .content-panel button {
-	background-color: var(--sl-color-text-accent) !important;
+	background-color: var(--sl-color-text-accent);
 	padding-left: 15px;
 	padding-right: 15px;
 }

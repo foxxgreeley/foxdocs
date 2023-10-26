@@ -15,7 +15,7 @@ export const astroDocsExpressiveCode = () =>
         frames: {
             styleOverrides: {
                 editorTabBarBackground: "var(--theme-code-tabs)",
-                editorActiveTabBackground: "hsl(269deg 40% 65% / 0.15)",
+                editorActiveTabBackground: "black",
                 editorActiveTabBorderBottom: "hsl(269deg 35% 55%)",
                 editorTabBarBorderBottom: "var(--theme-code-tabs)",
 
