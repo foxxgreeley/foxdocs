@@ -21,7 +21,7 @@ html {
 	--logo-width: 150px;
 
 	--white: rgb(255, 255, 255);
-	--black: #0a0a0b;
+	--black: #111111;
 	--bg-color: var(--black);
 	--text-color: var(--white);
 	--text-muted: rgb(200, 200, 200);
@@ -61,10 +61,10 @@ html {
 	--astro-code-token-constant: rgb(255 203 107) !important;
 
 	/* New Code Blocks */
+	--theme-code-tabs: #282828;
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
-	--theme-code-bg: rgb(37 42 55);
-	--theme-code-tabs: hsla(261, 40%, 21%, 1);
+	--theme-code-bg: #292d3e !important;
 	--theme-code-text: hsla(var(--color-base-white), 80%, 1);
 	--theme-navbar-bg: var(--theme-bg);
 	--theme-selection-color: hsla(var(--color-base-white), 100%, 1);
@@ -121,10 +121,10 @@ html {
 	--astro-code-token-constant: rgb(255 203 107) !important;
 
 	/* New Code Blocks */
+	--theme-code-tabs: #e6e6e6 !important;
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
 	--theme-code-bg: rgb(37 42 55);
-	--theme-code-tabs: hsla(261, 40%, 21%, 1);
 	--theme-code-text: hsla(var(--color-base-white), 80%, 1);
 	--theme-navbar-bg: var(--theme-bg);
 	--theme-selection-color: hsla(var(--color-base-white), 100%, 1);
@@ -144,21 +144,22 @@ html {
 
 .frame.has-title:not(.is-terminal) .header {
 	opacity: 100% !important;
-	background: var(--sl-color-text-accent) !important;
 }
 
 .frame.has-title:not(.is-terminal) .title{
 	position: unset !important;
 	background: none !important;
-	color: var(--sl-color-text-invert) !important;
+	color: var(--sl-color-text) !important;
 	border: none !important;
 	font-weight: 600 !important;
+	font-size: 14px;
 }
 
 
 .frame.has-title:not(.is-terminal) .title::after{
 	border: none !important;
 }
+
 
 .expressive-code .frame .header {
 	border-top-left-radius: var(--code-block-radius) !important;
