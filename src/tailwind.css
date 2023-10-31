@@ -62,6 +62,7 @@ html {
 
 	/* New Code Blocks */
 	--theme-code-tabs: #282828;
+	--theme-code-tab-dots: #cccccc;
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
 	--theme-code-bg: #292d3e !important;
@@ -122,6 +123,7 @@ html {
 
 	/* New Code Blocks */
 	--theme-code-tabs: #e6e6e6 !important;
+	--theme-code-tab-dots: rgb(75 85 99);
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
 	--theme-code-bg: rgb(37 42 55);
@@ -158,6 +160,10 @@ html {
 
 .frame.has-title:not(.is-terminal) .title::after{
 	border: none !important;
+}
+
+.frame.is-terminal .header::before{
+	background-color: var(--theme-code-tab-dots) !important;
 }
 
 

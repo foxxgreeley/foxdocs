@@ -51,6 +51,23 @@ personal_access_tokens
 users
 ```
 
+## Wiping and Seeding the Database
+If you want to wipe the database and start fresh, you can run the following command:
+```bash
+sail artisan migrate:fresh
+```
+This will wipe the database and run all migrations.
+
+If you want to seed the database with dummy data, you can run the following command:
+```bash
+sail artisan db:seed
+```
+
+You can also combine the two commands into one:
+```bash
+sail artisan migrate:fresh --seed
+```
+
 ## Rolling Back Migrations
 If you need to rollback your migrations, you can use the following command:
 
