@@ -1,0 +1,37 @@
+---
+title: Scribe
+description: Scribe helps you generate API docs automatically.
+sidebar:
+  order: 10
+---
+
+<button> [Scribe Documentation](https://scribe.knuckles.wtf/laravel/) </button>
+
+Scribe helps you generate API documentation for humans from your Laravel/Lumen/Dingo codebase.
+
+
+## Installation
+To install Scribe, run:
+
+```bash
+sail composer require --dev knuckleswtf/scribe
+```
+
+This will install Scribe and all required dependencies. Scribe will automatically register itself using Laravel's package discovery.
+
+## Configuration
+To publish Scribe's configuration file, run:
+
+```bash
+sail artisan vendor:publish --tag=scribe-config
+```
+This will create a scribe.php file in your config folder.
+
+## Generating API Docs
+To generate API docs in a project with Scribe installed, run:
+
+```bash
+sail artisan scribe:generate
+```
+
+This will run or rerun the API documentation generation process. The generated docs will be saved in `public/docs`.
